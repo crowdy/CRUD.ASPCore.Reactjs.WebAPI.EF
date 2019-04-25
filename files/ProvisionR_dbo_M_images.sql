@@ -1,0 +1,4 @@
+INSERT INTO ProvisionR.dbo.M_images (image_id, image_vname, image_name, image_type, image_app) VALUES ('0ae5b422-9950-4433-8466-4d7a85b0bbd1', 'for MT4 windows2019', 'Win2019', 'MT4', '1001');
+INSERT INTO ProvisionR.dbo.M_images (image_id, image_vname, image_name, image_type, image_app) VALUES ('6a634b70-bdff-4fe0-90b9-abe81862d468', 'デスクトップクラウド for キオスクGRC', 'Win2019', 'KIOSK_GRC', '2001');
+INSERT INTO ProvisionR.dbo.M_images (image_id, image_vname, image_name, image_type, image_app) VALUES ('7531a0d6-b6b1-4989-983b-d59dc8723107', 'for MT4ライト', 'Win2019', 'KIOSK_MT4', '1001');
+INSERT INTO ProvisionR.dbo.M_images (image_id, image_vname, image_name, image_type, image_app) VALUES ('ae875b05-2537-4ec0-b33f-41054825f2b5', 'for Biz   windows2019', 'Win2019', 'BIZ', '0');

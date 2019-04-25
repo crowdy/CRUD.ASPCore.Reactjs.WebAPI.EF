@@ -1,0 +1,1 @@
+INSERT INTO ProvisionR.dbo.T_vlan (vlan_id, vlan_limit, vlan_segment, vlan_type, vlan_enable) VALUES (1111, 200, '192.168.0.1/23', 'SZY', 0);

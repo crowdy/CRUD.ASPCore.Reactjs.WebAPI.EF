@@ -8,8 +8,8 @@ interface FetchEmployeeDataState {
 }
 
 export class FetchEmployee extends React.Component<RouteComponentProps<{}>, FetchEmployeeDataState> {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = { empList: [], loading: true };
 
         fetch('api/Employee/Index')
@@ -100,4 +100,4 @@ export class EmployeeData {
     gender: string = "";
     city: string = "";
     department: string = "";
-} 
+}
