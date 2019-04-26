@@ -1,26 +1,5 @@
 import * as React from 'react';
 import '../css/dataTables.jqueryui.min.css' // from https://cdn.datatables.net/
-import {
-    Badge,
-    Button,
-    Card,
-    CardHeader,
-    CardFooter,
-    DropdownMenu,
-    DropdownItem,
-    DropdownToggle,
-    UncontrolledDropdown,
-    Media,
-    Pagination,
-    PaginationItem,
-    PaginationLink,
-    Progress,
-    Table,
-    Container,
-    Row,
-    Col,
-    UncontrolledTooltip
-} from "reactstrap";
 
 import * as $ from 'jquery';
 // const $ = require('jquery');
