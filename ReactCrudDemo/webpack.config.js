@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const bundleOutputDir = './wwwroot/dist';
 
@@ -17,7 +18,11 @@ module.exports = (env) => {
         },
         module: {
             rules: [
-                { test: /\.tsx?$/, include: /ClientApp/, use: 'awesome-typescript-loader?silent=true' },
+                { test: /\.tsx?$/, 
+                    include: /ClientApp/,
+                    // use: 'awesome-typescript-loader?silent=true'
+                    use: ['awesome-typescript-loader?silent=true']
+                },
                 { test: /\.css$/, use: isDevBuild ? ['style-loader', 'css-loader'] : ExtractTextPlugin.extract({ use: 'css-loader?minimize' }) },
                 { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
             ]
@@ -36,7 +41,22 @@ module.exports = (env) => {
             })
         ] : [
             // Plugins that apply in production builds only
-            new webpack.optimize.UglifyJsPlugin(),
+            // new webpack.optimize.UglifyJsPlugin(),
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                uglifyOptions: {
+                    warnings: false,
+                    ie8: false,
+                    output: {
+                        comments: false
+                    },
+                    compress: true,
+                    ecma: 6,
+                    mangle: true
+                },
+                sourceMap: true
+            }),
             new ExtractTextPlugin('site.css')
         ])
     }];
